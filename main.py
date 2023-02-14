@@ -39,9 +39,9 @@ def find_mismatch(text):
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    #if mismatch == "Success":
-       # print("Success")
-   # else:
+    if mismatch == "Success":
+        print("Success")
+    else:
         print(mismatch)
 
 
