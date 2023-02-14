@@ -32,7 +32,3 @@ if __name__ == "__main__":
         print("Success")
     else:
         print(mismatch)
-
-
-if __name__ == "__main__":
-    main()
