@@ -34,11 +34,10 @@ def main():
         print("Invalid input format. Please enter a string containing only brackets.")
     else:
         mismatch = find_mismatch(text)
-        print(f"Expected: {mismatch}")
         if mismatch == "Success":
             print("Success")
         else:
-            print(f"Actual: {mismatch+1}")
+            print(mismatch + 1)
 
 if __name__ == "__main__":
     main()
