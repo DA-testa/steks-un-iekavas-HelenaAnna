@@ -13,7 +13,7 @@ def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
-            opening_brackets_stack.append(Bracket(next, i))
+            opening_brackets_stack.append(Bracket(next, i + 1))
 
         if next in ")]}":
             if not opening_brackets_stack:
@@ -24,13 +24,14 @@ def find_mismatch(text):
                 return i + 1
 
     if opening_brackets_stack:
-        return opening_brackets_stack[0].position
+        return opening_brackets_stack[-1].position
     else:
         return "Success"
 
 
 def main():
     choice = input("Input I or F")
+
     text = input()
     mismatch = find_mismatch(text)
     print(mismatch)
