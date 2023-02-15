@@ -9,6 +9,7 @@ Bracket = namedtuple("Bracket", ["char", "position"])
 def are_matching(left, right):
     return (left + right) in ["()", "[]", "{}"]
 
+
 def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
@@ -28,21 +29,18 @@ def find_mismatch(text):
     else:
         return "Success"
 
+
 def main():
     mode = input("Choose mode (F for file or I for input): ")
-    if mode.upper() == "F":
+    if mode == "F":
         filename = input("Enter filename: ")
-        try:
-            with open(filename, "r") as file:
-                text = file.read().strip()
-        except FileNotFoundError:
-            print("File not found.")
-            sys.exit(1)
-    elif mode.upper() == "I":
+        with open(filename) as file:
+            text = file.read().strip()
+    elif mode == "I":
         text = input("Enter brackets: ")
     else:
-        print("Invalid mode choice.")
-        sys.exit(1)
+        print("Invalid mode choice")
+        sys.exit()
 
     mismatch = find_mismatch(text)
     if mismatch == "Success":
