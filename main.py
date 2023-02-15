@@ -37,10 +37,9 @@ def find_mismatch(text):
 def main():
     choice = input("Input I or F")
     print()
-    if choice == "I":
-        text = input()
-        mismatch = find_mismatch(text)
-        print(mismatch)
+    text = input()
+    mismatch = find_mismatch(text)
+    print(mismatch)
 
 
 if __name__ == "__main__":
