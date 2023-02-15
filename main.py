@@ -29,20 +29,6 @@ def find_mismatch(text):
         return "Success"
 
 def main():
-    mode = input("Choose mode (F for file or I for input): ")
-    if mode.upper() == "F":
-        filename = input("Enter filename: ")
-        try:
-            with open(filename, "r") as file:
-                text = file.read().strip()
-        except FileNotFoundError:
-            print("File not found.")
-            sys.exit(1)
-    elif mode.upper() == "I":
-        text = input("Enter brackets: ")
-    else:
-        print("Invalid mode choice.")
-        sys.exit(1)
 
     mismatch = find_mismatch(text)
     if mismatch == "Success":
